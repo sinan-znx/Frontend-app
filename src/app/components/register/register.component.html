@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row mt-3">
+    <div
+      class="col d-none d-sm-none d-md-block col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 back-img rounded"
+    ></div>
+    <div
+      class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 border p-5 border-light"
+    >
+      <h2 class="mt-5 text-center">Sign Up</h2>
+      <br />
+      <form action="" class="pe-5 ps-5" [formGroup]="registerForm" (ngSubmit)="signUpClicked()">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingName"
+            placeholder="Name"
+            formControlName="name"
+          />
+          <label for="floatingName ">Name</label>
+          <p
+            *ngIf="(name.dirty || name.touched)&&
+              registerForm.controls.name?.errors?.['required']"
+            class="text-danger"
+          >
+            Name is required
+          </p>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingPhone"
+            placeholder="Phone Number"
+            formControlName="phone"
+          />
+          <label for="floatingName ">Phone Number</label>
+          <p
+            *ngIf="(phone.dirty || phone.touched)&&
+            registerForm.controls.phone?.errors?.['required']"
+            class="text-danger"
+          >
+            Phone Number is required
+          </p>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+            formControlName="email"
+          />
+          <label for="floatingInput">Email address</label>
+          <p
+            *ngIf="(email.dirty || email.touched)&&
+            registerForm.controls.email?.errors?.['required']"
+            class="text-danger"
+          >
+            Email is required
+          </p>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <label for="floatingPassword">Password</label>
+          <p
+            *ngIf=" (password.dirty || password.touched)&&
+            password?.errors?.['required']"
+            class="text-danger"
+          >
+            Password is required
+          </p>
+          <p
+            *ngIf=" (password.dirty || password.touched)&&
+            password?.errors?.['minlength']"
+            class="text-danger"
+          >
+            Password need minimun 8 character
+          </p>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingConfirmPassword"
+            placeholder="ConfirmPassword"
+            formControlName="confirmPassword"
+          />
+          <label for="floatingConfirmPassword">Confirm Password</label>
+          <p
+            *ngIf="(confirmPassword.dirty || confirmPassword.touched)&&
+            registerForm.controls.confirmPassword?.errors?.['required']"
+            class="text-danger"
+          >
+            Confirm password is required
+          </p>
+          <p
+            *ngIf="(confirmPassword.dirty || confirmPassword.touched)&&
+            registerForm.controls.confirmPassword?.errors?.['noMatch']"
+            class="text-danger"
+          >
+            Passwords are not match
+          </p>
+        </div>
+        <button class="btn btn-primary mt-3"
+        >LOGIN</button>
+      </form>
+    </div>
+  </div>
+</div>
