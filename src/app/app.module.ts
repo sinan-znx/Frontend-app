@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FlashMessagesModule } from 'flash-messages-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +23,13 @@ import { CartComponent } from './components/cart/cart.component';
     CategoryComponent,
     CartComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule,ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FlashMessagesModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
