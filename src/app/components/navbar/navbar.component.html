@@ -50,13 +50,13 @@
       <!-- Logged sec -->
       <ng-template #loggedSec>
         <ul class="navbar-nav d-flex jusify-content-end">
-          <li *ngIf="!auth.isAdmin()" class="nav-item" routerLinkActive="active">
+          <li *ngIf="!auth.isAdmin()" class="nav-item" routerLinkActive="active"><!--cart-->
             <a class="nav-link" routerLink="/cart" aria-current="page">cart</a>
           </li>
-          <li *ngIf="auth.isAdmin()" class="nav-item" routerLinkActive="active">
+          <li *ngIf="auth.isAdmin()" class="nav-item" routerLinkActive="active"><!--orders-->
             <a class="nav-link" routerLink="/orders" aria-current="page">orders</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item"> <!--logout-->
             <a class="nav-link" (click)="logout()">Logout</a>
           </li>
         </ul>

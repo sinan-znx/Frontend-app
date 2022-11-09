@@ -1,0 +1,12 @@
+.bg-gray {
+  background-color: #f8f9fa;
+list-style-type: none;
+  height: 100vh;
+}
+.item{
+text-decoration: none;
+color: black;
+}
+.listStyle{
+  list-style-type: none;
+}
