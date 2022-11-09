@@ -8,7 +8,12 @@
     >
       <h2 class="mt-5 text-center">Sign Up</h2>
       <br />
-      <form action="" class="pe-5 ps-5" [formGroup]="registerForm" (ngSubmit)="signUpClicked()">
+      <form
+        action=""
+        class="pe-5 ps-5"
+        [formGroup]="registerForm"
+        (ngSubmit)="signUpClicked()"
+      >
         <div class="form-floating mb-3">
           <input
             type="text"
@@ -108,8 +113,12 @@
             Passwords are not match
           </p>
         </div>
-        <button class="btn btn-primary mt-3"
-        >LOGIN</button>
+        <button
+          class="btn btn-primary mt-3"
+          [ngClass]="{ disabled: isSubmited || registerForm.invalid }"
+        >
+          SignIn
+        </button>
       </form>
     </div>
   </div>
