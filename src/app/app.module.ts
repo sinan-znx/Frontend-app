@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlashMessagesModule } from 'flash-messages-angular';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,7 @@ import { EditCarouselComponent } from './components/managePages/edit-carousel/ed
 import { NewCarouselComponent } from './components/managePages/new-carousel/new-carousel.component';
 import { NewCategoryComponent } from './components/managePages/new-category/new-category.component';
 import { EditCategoryComponent } from './components/managePages/edit-category/edit-category.component';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,11 @@ import { EditCategoryComponent } from './components/managePages/edit-category/ed
     FlashMessagesModule.forRoot(),
     FormsModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true,
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

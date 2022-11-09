@@ -1,1 +1,71 @@
-<p>new-carousel works!</p>
+<div class="container-fluid">
+  <form action="" (ngSubmit)="addProduct()" #addProducts="ngForm">
+    <div class="row g-3">
+      <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <label for="" class="form-label">Heading</label>
+        <input
+          type="text"
+          class="form-control"
+          name="heading"
+          [(ngModel)]="heading"
+          required
+        />
+      </div>
+      <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <label for="" class="form-label">Image</label>
+        <input
+          type="file"
+          name="heading"
+          class="form-control"
+          [(ngModel)]="image"
+          (change)="onFileChange($event)"
+          required
+        />
+      </div>
+      <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <label for="" class="form-label">Offer</label>
+        <input
+          type="text"
+          class="form-control"
+          name="heading"
+          [(ngModel)]="offer"
+          required
+        />
+      </div>
+      <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <label for="" class="form-label">Category</label>
+        <input
+          type="text"
+          class="form-control"
+          name="heading"
+          [(ngModel)]="category"
+          required
+        />
+      </div>
+      <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <button
+          *ngIf="!isNew && !isUploading"
+          class="btn btn-primary"
+          [ngClass]="{ disabled: addProducts.invalid }"
+        >
+          Add Product
+        </button>
+        <button
+          *ngIf="isUploading"
+          class="btn btn-primary"
+          [ngClass]="{ disabled: isUploading }"
+        >
+          Uploading
+        </button>
+
+        <button
+          (click)="newAddProduct($event)"
+          *ngIf="isNew && !isUploading"
+          class="btn btn-primary"
+        >
+          New Product
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
