@@ -30,7 +30,7 @@ export class NewCarouselComponent implements OnInit {
     }
   }
 
-  addProduct() {
+  addCarousel() {
     this.isUploading = true;
     //get secure url form our serve
     this.adminApi.getAwsUrl().subscribe(async (res) => {

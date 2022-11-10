@@ -5,8 +5,13 @@ list-style-type: none;
 }
 .item{
 text-decoration: none;
-color: black;
+color: rgb(150, 125, 125);
 }
 .listStyle{
   list-style-type: none;
+
+
+}
+.activeLink{
+background-color: aqua;
 }
