@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit {
   loginClicked() {
     let user = this.userCred;
     this.auth.login(user).subscribe((res) => {
+      console.log(res);
+
       if (res.success) {
         localStorage.setItem('token_id', res.token);
         localStorage.setItem('user_id', res.user.id);
