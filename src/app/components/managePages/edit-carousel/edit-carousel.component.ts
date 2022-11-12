@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserApiService } from 'src/app/services/user-api.service';
 import { FlashMessagesService } from 'flash-messages-angular';
+import { AdminApiService } from 'src/app/services/admin-api.service';
 
 @Component({
   selector: 'app-edit-carousel',
@@ -10,6 +11,7 @@ import { FlashMessagesService } from 'flash-messages-angular';
 export class EditCarouselComponent implements OnInit {
   constructor(
     private userApi: UserApiService,
+    private adminApi: AdminApiService,
     private flashMsg: FlashMessagesService
   ) {
     this.displayCarousel();
@@ -31,7 +33,7 @@ export class EditCarouselComponent implements OnInit {
   deleteCarousel($event: Event, id: any) {
     $event.preventDefault();
     let document = { _id: id };
-    this.userApi.removeCarousel(document).subscribe((res) => {
+    this.adminApi.removeCarousel(document).subscribe((res) => {
       if (res.success) {
         this.flashMsg.show('successfully removed', {
           cssClass: 'alert-success',

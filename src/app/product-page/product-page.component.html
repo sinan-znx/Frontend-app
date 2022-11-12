@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row mt-2">
+    <div
+      class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 imgDiv"
+    >
+      <img
+        class="imgStyle rounded"
+        src="{{ productData.thumbnail }}"
+        alt="{{ productData.name }}"
+      />
+    </div>
+    <div
+      class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 pt-5 notImgDiv pb-5"
+    >
+      <div class="pb-5 ps-5">
+        <h2>{{ productData.name | titlecase }}</h2>
+
+        <h5>₹{{ productData.offerPrice }}</h5>
+        <div class="discountDiv">
+          <del class="actualPrice"
+            ><h6>M.R.P ₹{{ productData.actualPrice }}</h6>
+          </del>
+          <h6 class="ms-2 percentage">
+            {{ offPercentage | number: "1.0-0" }}% OFF
+          </h6>
+        </div>
+
+        <h6 class="mt-1">{{ productData.category | titlecase }}</h6>
+        <button *ngIf="!isAdded" class="btn btn-primary cartButton mt-3" (click)="onCartClick($event,productData._id)">ADD TO CART</button>
+        <button *ngIf="isAdded" class="btn btn-danger cartButton mt-3" (click)="onCartRemove($event,productData._id)">ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+<!-- second row -->
+  <div class="row">
+    <div
+      class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 border-end"
+    >
+      <h2 class="ps-4">Specifications</h2>
+      <ul class="mt-4">
+        <li *ngFor="let item of specList">
+          <p>{{ item }}</p>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 border-start"
+    ></div>
+  </div>
+</div>

@@ -19,4 +19,16 @@ export class AdminApiService {
       carousel
     );
   }
+  removeCarousel(document: any) {
+    return this.http.post<any>(
+      'http://localhost:3000/admin/removeCarousel',
+      document
+    );
+  }
+  addProduct(product: any) {
+    return this.http.post<any>(
+      'http://localhost:3000/admin/addProduct',
+      product
+    );
+  }
 }

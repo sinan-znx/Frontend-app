@@ -25,11 +25,11 @@ export class NewCarouselComponent implements OnInit {
   onFileChange($event: Event) {
     const target = $event.target as HTMLInputElement;
     if (target.files && target.files.length > 0) {
-      this.file = target.files[target.files.length - 1];
+      this.file = target.files[0];
       console.log(this.file);
     }
   }
-
+//ADDING_CAROUSEL
   addCarousel() {
     this.isUploading = true;
     //get secure url form our serve
@@ -64,6 +64,7 @@ export class NewCarouselComponent implements OnInit {
       });
     });
   }
+//NEW
   newAddProduct($event: Event) {
     $event.preventDefault();
     this.isNew = false;

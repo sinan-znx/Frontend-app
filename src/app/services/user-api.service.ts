@@ -9,10 +9,28 @@ export class UserApiService {
   getCarousel() {
     return this.http.get<any>('http://localhost:3000/users/sendCarousel');
   }
-  removeCarousel(document: any) {
+  getProduct() {
+    return this.http.get<any>('http://localhost:3000/users/sendProduct');
+  }
+  getOneProduct(id: any) {
     return this.http.post<any>(
-      'http://localhost:3000/users/removeCarousel',
-      document
+      'http://localhost:3000/users/sendOneProduct',
+      id
     );
+  }
+  addCartItem(details: any) {
+    return this.http.post<any>(
+      'http://localhost:3000/users/addToCart',
+      details
+    );
+  }
+  removeFromCart(details: any) {
+    return this.http.post<any>(
+      'http://localhost:3000/users/removeFromCart',
+      details
+    );
+  }
+  getCart(userId:any) {
+    return this.http.post<any>('http://localhost:3000/users/sendCart',userId);
   }
 }

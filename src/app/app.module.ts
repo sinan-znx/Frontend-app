@@ -21,6 +21,7 @@ import { NewCarouselComponent } from './components/managePages/new-carousel/new-
 import { NewCategoryComponent } from './components/managePages/new-category/new-category.component';
 import { EditCategoryComponent } from './components/managePages/edit-category/edit-category.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { ProductPageComponent } from './product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     NewCarouselComponent,
     NewCategoryComponent,
     EditCategoryComponent,
+    ProductPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,8 +9,10 @@ import { UserApiService } from 'src/app/services/user-api.service';
 export class HomeComponent implements OnInit {
   constructor(private userApi: UserApiService) {
     userApi.getCarousel().subscribe((res) => (this.carouselData = res.data));
+    userApi.getProduct().subscribe((res) => (this.productData = res.data));
   }
 
   ngOnInit(): void {}
   carouselData: any;
+  productData: any;
 }

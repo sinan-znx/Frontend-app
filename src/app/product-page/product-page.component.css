@@ -1,0 +1,21 @@
+.imgDiv {
+  overflow: hidden;
+}
+.imgStyle {
+  width: 100%;
+height: 400px;
+}
+.discountDiv {
+  display: flex;
+}
+.percentage{
+color: rgb(9, 124, 9);
+}
+.actualPrice{
+color: gray;
+}
+
+.notImgDiv{
+display: flex;
+align-items: center;
+}

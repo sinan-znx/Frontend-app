@@ -1,1 +1,78 @@
-<p>new-product works!</p>
+<div class="container-fluid">
+  <form action="" (ngSubmit)="addProduct()" #addProductForm="ngForm">
+    <div class="row g-3">
+      <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <label for="" class="form-label">Product Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="productName"
+          [(ngModel)]="product.name"
+          required
+        />
+      </div>
+      <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <label for="" class="form-label">Product Category</label>
+        <input
+          type="text"
+          class="form-control"
+          name="productCategory"
+          [(ngModel)]="product.category"
+          required
+        />
+      </div>
+      <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <label for="" class="form-label">Product Actual Price</label>
+        <input
+          type="number"
+          class="form-control"
+          name="productPrice"
+          [(ngModel)]="product.actualPrice"
+          required
+        />
+      </div>
+      <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <label for="" class="form-label">Product Offer Price</label>
+        <input
+          type="number"
+          class="form-control"
+          name="productName"
+          [(ngModel)]="product.offerPrice"
+          required
+        />
+      </div>
+      <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <label for="" class="form-label">Product Description</label>
+        <input
+          type="text"
+          class="form-control"
+          name="ProductDescription"
+          [(ngModel)]="product.description"
+          required
+        />
+      </div>
+
+      <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <label for="" class="form-label">Product Thumbnail</label>
+        <input
+          (change)="onFileChange($event)"
+          type="file"
+          class="form-control"
+          name="productThumbnail"
+          required
+        />
+      </div>
+
+      <div
+        class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
+      >
+        <button
+          class="btn btn-primary"
+          [ngClass]="{ disabled: addProductForm.invalid }"
+        >
+          Add Product
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

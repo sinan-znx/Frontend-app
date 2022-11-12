@@ -1,17 +1,18 @@
 .bg-gray {
   background-color: #f8f9fa;
-list-style-type: none;
+  list-style-type: none;
   height: 100vh;
 }
-.item{
-text-decoration: none;
-color: rgb(150, 125, 125);
+.item {
+  text-decoration: none;
+  color: rgb(150, 125, 125);
 }
-.listStyle{
+.listStyle {
   list-style-type: none;
-
-
 }
-.activeLink{
-background-color: aqua;
+.lists{
+opacity: .5;
+}
+.activeLink {
+opacity: 1;
 }

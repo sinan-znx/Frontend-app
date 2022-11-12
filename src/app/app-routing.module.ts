@@ -13,6 +13,7 @@ import { NewCategoryComponent } from './components/managePages/new-category/new-
 import { NewProductComponent } from './components/managePages/new-product/new-product.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './guard/auth.guard';
+import { ProductPageComponent } from './product-page/product-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
+  { path: 'product/:id', component: ProductPageComponent },
   {
     path: 'manage',
     component: ManageComponent,
