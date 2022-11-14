@@ -30,7 +30,26 @@ export class UserApiService {
       details
     );
   }
-  getCart(userId:any) {
-    return this.http.post<any>('http://localhost:3000/users/sendCart',userId);
+  getCart(userId: any) {
+    return this.http.post<any>('http://localhost:3000/users/sendCart', userId);
   }
+  incORdec(incOrdec: any) {
+    return this.http.post<any>(
+      'http://localhost:3000/users/incOrdec',
+      incOrdec
+    );
+  }
+  getTotal(userId: any) {
+    return this.http.post<any>(
+      'http://localhost:3000/users/totalAmount',
+      userId
+    );
+  }
+  checkoutOrder(details: any) {
+    return this.http.post<any>('http://localhost:3000/users/checkout', details);
+  }
+verifyPayment(razorpayResponse:any){
+  return this.http.post<any>('http://localhost:3000/users/verifyPayment',razorpayResponse);
+
+}
 }

@@ -8,12 +8,38 @@ import { UserApiService } from 'src/app/services/user-api.service';
 })
 export class CartComponent implements OnInit {
   constructor(private userApi: UserApiService) {
+    this.GetCartdata();
+    this.totalAmount();
+  }
+  cartData: any;
+  total: any;
+  ngOnInit(): void {}
+  //CART_DATA
+  GetCartdata() {
     let userId = { userId: localStorage.getItem('user_id') };
-    userApi.getCart(userId).subscribe((res) => {
+    this.userApi.getCart(userId).subscribe((res) => {
       this.cartData = res.data;
       console.log(this.cartData);
     });
   }
-  cartData: any;
-  ngOnInit(): void {}
+  //ON_CHANGE_QUANTITY
+  quantityChange(incOrDec: any, productId: any) {
+    let value = {
+      user: localStorage.getItem('user_id'),
+      product: productId,
+      value: incOrDec,
+    };
+    this.userApi.incORdec(value).subscribe((res) => {
+      this.GetCartdata();
+      this.totalAmount();
+    });
+  }
+  //TO_GET_TOTAL_AMOUNT
+  totalAmount() {
+    let userId = { userId: localStorage.getItem('user_id') };
+    this.userApi.getTotal(userId).subscribe((res) => {
+      this.total = res.total;
+      console.log(this.total);
+    });
+  }
 }

@@ -22,6 +22,7 @@ import { NewCategoryComponent } from './components/managePages/new-category/new-
 import { EditCategoryComponent } from './components/managePages/edit-category/edit-category.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
     NewCategoryComponent,
     EditCategoryComponent,
     ProductPageComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

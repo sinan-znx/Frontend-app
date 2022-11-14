@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row pt-5">
+    <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+      <form action="" #checkoutForm ='ngForm'>
+        <div class="row g-3">
+          <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+            <label for="" class="form-label">Address</label>
+            <input
+required
+              type="text"
+              class="form-control"
+              name="address"
+              [(ngModel)]="deliveryDetails.address"
+            />
+          </div>
+          <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+            <label for="" class="form-label">Pincode</label>
+            <input
+            required
+
+              type="text"
+              class="form-control"
+              name="pincode"
+              [(ngModel)]="deliveryDetails.pincode"
+            />
+          </div>
+          <div class="col col-12 col-sm-12 col-md-12 col-lg-12">
+            <label for="" class="form-label">Mobile Number</label>
+            <input
+            required
+
+              type="text"
+              class="form-control"
+              name="phone"
+              [(ngModel)]="deliveryDetails.phone"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+      <h2>Total Amount:Rs {{ total }}</h2>
+      <div>
+        <form action="">
+          <div>
+            <input
+              type="radio"
+              [checked]="true"
+              [(ngModel)]="paymentMethod"
+              value="online"
+              name="method"
+            />
+            <label for="">Online</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              [(ngModel)]="paymentMethod"
+              value="cod"
+              name="method"
+            />
+            <label for="">COD</label>
+          </div>
+        </form>
+      </div>
+      <button class="btn btn-primary mt-2" (click)="checkout($event)" [ngClass]="{disabled: checkoutForm.invalid}">
+        Checkout
+      </button>
+    </div>
+  </div>
+</div>
