@@ -9,11 +9,15 @@ import { UserApiService } from 'src/app/services/user-api.service';
 export class CartComponent implements OnInit {
   constructor(private userApi: UserApiService) {
     this.GetCartdata();
-    this.totalAmount();
+    if (this.cartData) {
+            this.totalAmount();
+          }
   }
   cartData: any;
-  total: any;
-  ngOnInit(): void {}
+  total: any = 0;
+  ngOnInit(): void {
+
+  }
   //CART_DATA
   GetCartdata() {
     let userId = { userId: localStorage.getItem('user_id') };
@@ -38,7 +42,8 @@ export class CartComponent implements OnInit {
   totalAmount() {
     let userId = { userId: localStorage.getItem('user_id') };
     this.userApi.getTotal(userId).subscribe((res) => {
-      this.total = res.total;
+      this.total =
+        res.total[0].totalAmount === undefined ? 0 : res.total[0].totalAmount;
       console.log(this.total);
     });
   }

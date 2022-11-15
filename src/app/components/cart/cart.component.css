@@ -5,3 +5,7 @@ color: gray;
 color: white;
 text-decoration: none;
 }
+.noCart{
+display: flex;
+margin-top: 20%;
+}

@@ -18,7 +18,7 @@ export class CheckoutComponent implements OnInit {
   constructor(private userApi: UserApiService) {
     let userId = { userId: localStorage.getItem('user_id') };
     userApi.getTotal(userId).subscribe((res) => {
-      this.total = res.total;
+      this.total = res.total[0].totalAmount ?? 0;
     });
   }
   total: any;
@@ -53,9 +53,6 @@ export class CheckoutComponent implements OnInit {
           order_id: res.order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
           // "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
           handler: function (response: any) {
-            alert(response.razorpay_payment_id);
-            alert(response.razorpay_order_id);
-            alert(response.razorpay_signature);
             ref.razorpay_response_handler(response, res.order);
           },
 
@@ -85,6 +82,7 @@ export class CheckoutComponent implements OnInit {
     let data = {
       ...response,
       ...order,
+      userId: localStorage.getItem('user_id'),
     };
 
     this.userApi.verifyPayment(data).subscribe((res) => {

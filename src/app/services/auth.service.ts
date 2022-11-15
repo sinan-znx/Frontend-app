@@ -22,6 +22,7 @@ export class AuthService {
   isAdmin() {
     return localStorage.getItem('isAdmin') === 'true' ? true : false;
   }
+  //LOAD_TOKEN
   loadToken() {
     return localStorage.getItem('token_id');
   }
