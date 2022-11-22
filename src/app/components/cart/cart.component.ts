@@ -43,4 +43,18 @@ export class CartComponent implements OnInit {
       console.log(this.total);
     });
   }
+  //REMOVE_PRODUCT_FROM_CART
+  removeProduct($event: any, productId: string) {
+    let details = {
+      userId: localStorage.getItem('user_id'),
+      productId: productId,
+    };
+this.userApi.removeFromCart(details).subscribe(res=>{
+if (res.success) {
+this.GetCartdata()
+} else {
+
+}
+})
+  }
 }

@@ -18,7 +18,7 @@
             ₹{{ cart.product[0].offerPrice }}
             <del class="actualPrice">{{ cart.product[0].actualPrice }}</del>
           </p>
-          <div class="row">
+          <div class="row container g-1">
             <div
               class="col col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-end"
             >
@@ -45,6 +45,7 @@
                 +
               </button>
             </div>
+<button class="btn btn-danger" (click)="removeProduct($event,cart.productId)"> Remove</button>
           </div>
         </div>
       </div>
