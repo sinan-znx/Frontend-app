@@ -9,15 +9,11 @@ import { UserApiService } from 'src/app/services/user-api.service';
 export class CartComponent implements OnInit {
   constructor(private userApi: UserApiService) {
     this.GetCartdata();
-    if (this.cartData) {
-            this.totalAmount();
-          }
+    this.totalAmount();
   }
   cartData: any;
   total: any = 0;
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
   //CART_DATA
   GetCartdata() {
     let userId = { userId: localStorage.getItem('user_id') };
