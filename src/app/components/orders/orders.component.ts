@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { UserApiService } from 'src/app/services/user-api.service';
 
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.css']
+  styleUrls: ['./orders.component.css'],
 })
 export class OrdersComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private userApi: UserApiService) {
+this.getOrders()
   }
 
+  ngOnInit(): void {}
+  getOrders() {
+    let details = { userId: localStorage.getItem('user_id') };
+    this.userApi.getOrders(details).subscribe((res) => {
+      console.log(res);
+    });
+  }
 }

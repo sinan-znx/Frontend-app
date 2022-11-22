@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FlashMessagesService } from 'flash-messages-angular';
 import { UserApiService } from 'src/app/services/user-api.service';
 
 declare var Razorpay: any;
@@ -15,7 +17,7 @@ export class CheckoutComponent implements OnInit {
     phone: '',
   };
 
-  constructor(private userApi: UserApiService) {
+  constructor(private userApi: UserApiService,private flashMsg:FlashMessagesService,private router:Router) {
     let userId = { userId: localStorage.getItem('user_id') };
     userApi.getTotal(userId).subscribe((res) => {
       this.total = res.total[0].totalAmount ?? 0;
@@ -86,7 +88,14 @@ export class CheckoutComponent implements OnInit {
     };
 
     this.userApi.verifyPayment(data).subscribe((res) => {
-      console.log(res);
+      if (res.success) {
+this.flashMsg.show('Successfull Payment',{cssClass:'alert-success',timeout:3000})
+this.router.navigate(['/successfullPay'])
+} else {
+        this.flashMsg.show('Unsuccessfull Payment',{cssClass:'alert-danger',timeout:3000})
+        this.router.navigate(['/failedPay'])
+
+      }
     });
   }
 }

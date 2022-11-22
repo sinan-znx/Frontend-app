@@ -23,6 +23,8 @@ import { EditCategoryComponent } from './components/managePages/edit-category/ed
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { SuccessfullComponent } from './components/successfull/successfull.component';
+import { FailedPayComponent } from './components/failed-pay/failed-pay.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     EditCategoryComponent,
     ProductPageComponent,
     CheckoutComponent,
+    SuccessfullComponent,
+    FailedPayComponent,
   ],
   imports: [
     BrowserModule,

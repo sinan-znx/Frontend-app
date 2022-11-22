@@ -48,8 +48,13 @@ export class UserApiService {
   checkoutOrder(details: any) {
     return this.http.post<any>('http://localhost:3000/users/checkout', details);
   }
-verifyPayment(razorpayResponse:any){
-  return this.http.post<any>('http://localhost:3000/users/verifyPayment',razorpayResponse);
-
-}
+  verifyPayment(razorpayResponse: any) {
+    return this.http.post<any>(
+      'http://localhost:3000/users/verifyPayment',
+      razorpayResponse
+    );
+  }
+  getOrders(userId: any) {
+    return this.http.post<any>('http://localhost:3000/users/sendOrder', userId);
+  }
 }
