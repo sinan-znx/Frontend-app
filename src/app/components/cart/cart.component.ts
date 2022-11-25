@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FlashMessagesService } from 'flash-messages-angular';
 import { UserApiService } from 'src/app/services/user-api.service';
 
 @Component({
@@ -7,7 +8,10 @@ import { UserApiService } from 'src/app/services/user-api.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  constructor(private userApi: UserApiService) {
+  constructor(
+    private userApi: UserApiService,
+    private flashMsg: FlashMessagesService
+  ) {
     this.GetCartdata();
     this.totalAmount();
   }
@@ -40,7 +44,6 @@ export class CartComponent implements OnInit {
     this.userApi.getTotal(userId).subscribe((res) => {
       this.total =
         res.total[0].totalAmount === undefined ? 0 : res.total[0].totalAmount;
-      console.log(this.total);
     });
   }
   //REMOVE_PRODUCT_FROM_CART
@@ -49,12 +52,20 @@ export class CartComponent implements OnInit {
       userId: localStorage.getItem('user_id'),
       productId: productId,
     };
-this.userApi.removeFromCart(details).subscribe(res=>{
-if (res.success) {
-this.GetCartdata()
-} else {
-
-}
-})
+    this.userApi.removeFromCart(details).subscribe((res) => {
+      if (res.success) {
+        this.GetCartdata();
+        this.totalAmount();
+        this.flashMsg.show('Product removed successfully', {
+          cssClass: 'alert-success',
+          timeout: 3000,
+        });
+      } else {
+        this.flashMsg.show('Fail to remove a product', {
+          cssClass: 'alert-danger',
+          timeout: 3000,
+        });
+      }
+    });
   }
 }

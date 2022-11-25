@@ -21,7 +21,7 @@ import { NewCarouselComponent } from './components/managePages/new-carousel/new-
 import { NewCategoryComponent } from './components/managePages/new-category/new-category.component';
 import { EditCategoryComponent } from './components/managePages/edit-category/edit-category.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
-import { ProductPageComponent } from './product-page/product-page.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SuccessfullComponent } from './components/successfull/successfull.component';
 import { FailedPayComponent } from './components/failed-pay/failed-pay.component';

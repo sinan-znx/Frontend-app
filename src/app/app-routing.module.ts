@@ -17,7 +17,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SuccessfullComponent } from './components/successfull/successfull.component';
 import { AuthGuard } from './guard/auth.guard';
-import { ProductPageComponent } from './product-page/product-page.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

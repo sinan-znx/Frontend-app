@@ -53,7 +53,7 @@
     <hr />
     <div>
       <h4>Total:Rs {{ total }}</h4>
-      <button class="btn btn-success">
+      <button class="btn btn-success" [ngClass]="{disabled: total ===0 || !cartData }">
         <a class="linkText" routerLink="/checkout">Place Order</a>
       </button>
     </div>

@@ -15,7 +15,10 @@ this.getOrders()
   getOrders() {
     let details = { userId: localStorage.getItem('user_id') };
     this.userApi.getOrders(details).subscribe((res) => {
-      console.log(res);
+this.orderData=res.orders
+console.log(this.orderData);
     });
   }
+
+orderData:any
 }

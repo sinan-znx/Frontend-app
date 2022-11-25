@@ -26,8 +26,7 @@
         </div>
 
         <h6 class="mt-1">{{ productData.category | titlecase }}</h6>
-        <button *ngIf="!isAdded" class="btn btn-primary cartButton mt-3" (click)="onCartClick($event,productData._id)">ADD TO CART</button>
-        <button *ngIf="isAdded" class="btn btn-danger cartButton mt-3" (click)="onCartRemove($event,productData._id)">ADD TO CART</button>
+        <button class="btn btn-primary cartButton mt-3" (click)="onCartClick($event,productData._id)">ADD TO CART</button>
       </div>
     </div>
   </div>
