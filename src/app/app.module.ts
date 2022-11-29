@@ -25,6 +25,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SuccessfullComponent } from './components/successfull/successfull.component';
 import { FailedPayComponent } from './components/failed-pay/failed-pay.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+import { ManageOrdersComponent } from './components/manage-orders/manage-orders.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { FailedPayComponent } from './components/failed-pay/failed-pay.component
     CheckoutComponent,
     SuccessfullComponent,
     FailedPayComponent,
+    ProductsListComponent,
+    ManageOrdersComponent,
   ],
   imports: [
     BrowserModule,

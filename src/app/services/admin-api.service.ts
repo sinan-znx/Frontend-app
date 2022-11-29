@@ -31,4 +31,14 @@ export class AdminApiService {
       product
     );
   }
+  allOrders() {
+    return this.http.get<any>(
+      'http://localhost:3000/admin/allOrders'
+    );
+  }
+  changeStatus(order:any) {
+    return this.http.post<any>(
+      'http://localhost:3000/admin/changeStatus',order
+    );
+  }
 }

@@ -57,4 +57,8 @@ export class UserApiService {
   getOrders(userId: any) {
     return this.http.post<any>('http://localhost:3000/users/sendOrder', userId);
   }
+  getProductList(tag:any){
+    return this.http.post<any>('http://localhost:3000/users/productList', tag);
+
+  }
 }

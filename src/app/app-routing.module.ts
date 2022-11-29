@@ -18,6 +18,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { SuccessfullComponent } from './components/successfull/successfull.component';
 import { AuthGuard } from './guard/auth.guard';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+import { ManageOrdersComponent } from './components/manage-orders/manage-orders.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +28,7 @@ const routes: Routes = [
   { path: 'category', component: CategoryComponent },
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
   { path: 'product/:id', component: ProductPageComponent },
+  { path: 'products/:tag', component: ProductsListComponent },
   {
     path: 'manage',
     component: ManageComponent,
@@ -53,6 +56,11 @@ const routes: Routes = [
   {
     path: 'orders',
     component: OrdersComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'adminOrders',
+    component: ManageOrdersComponent,
     canActivate: [AuthGuard],
   },
 ];

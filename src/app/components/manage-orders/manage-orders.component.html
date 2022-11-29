@@ -1,0 +1,28 @@
+<div class="container-fluid">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">no</th>
+      <th scope="col">Order Id</th>
+      <th scope="col">Pincode</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of orders; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ item._id }}</td>
+      <td>{{ item.deliveryDetails.pincode }}</td>
+      <td *ngIf="item.status === 'placed'">
+        <button class="btn btn-primary" (click)="changeStatus($event,item._id,item.status)">Ship</button>
+      </td>
+      <td *ngIf="item.status === 'shipped'">
+        <button class="btn btn-success" (click)="changeStatus($event,item._id,item.status)">Delivered</button>
+      </td>
+      <td *ngIf="item.status === 'deliverd'">
+order done
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
