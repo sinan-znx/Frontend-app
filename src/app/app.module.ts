@@ -18,7 +18,6 @@ import { NewProductComponent } from './components/managePages/new-product/new-pr
 import { EditProductComponent } from './components/managePages/edit-product/edit-product.component';
 import { EditCarouselComponent } from './components/managePages/edit-carousel/edit-carousel.component';
 import { NewCarouselComponent } from './components/managePages/new-carousel/new-carousel.component';
-import { NewCategoryComponent } from './components/managePages/new-category/new-category.component';
 import { EditCategoryComponent } from './components/managePages/edit-category/edit-category.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ProductPageComponent } from './components/product-page/product-page.component';
@@ -43,7 +42,6 @@ import { ManageOrdersComponent } from './components/manage-orders/manage-orders.
     EditProductComponent,
     EditCarouselComponent,
     NewCarouselComponent,
-    NewCategoryComponent,
     EditCategoryComponent,
     ProductPageComponent,
     CheckoutComponent,

@@ -41,4 +41,15 @@ export class AdminApiService {
       'http://localhost:3000/admin/changeStatus',order
     );
   }
+  getAllProducts() {
+    return this.http.get<any>(
+      'http://localhost:3000/admin/allProducts'
+    );
+  }
+  removeOneProduct(id: any) {
+    return this.http.post<any>(
+      'http://localhost:3000/admin/removeProduct',
+      id
+    );
+  }
 }

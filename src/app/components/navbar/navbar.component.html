@@ -29,8 +29,9 @@
             <a class="nav-link" aria-current="page" routerLink="/">Home</a>
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/manage">Manage</a>
+            <a class="nav-link" routerLink="/category">Category</a>
           </li>
+
         </ul>
       </ng-template>
 <!--
@@ -55,6 +56,9 @@
           </li>
           <li *ngIf="!auth.isAdmin()" class="nav-item" routerLinkActive="active"><!--orders-->
             <a class="nav-link" routerLink="/orders" aria-current="page">orders</a>
+          </li>
+          <li *ngIf="auth.isAdmin()" class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/manage">Manage</a>
           </li>
           <li *ngIf="auth.isAdmin()" class="nav-item" routerLinkActive="active"><!--orders-->
             <a class="nav-link" routerLink="/adminOrders" aria-current="page">Manage orders</a>

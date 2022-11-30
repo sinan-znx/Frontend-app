@@ -17,6 +17,7 @@ export class EditCarouselComponent implements OnInit {
     this.displayCarousel();
   }
   carouselData: any = [];
+title='Edit Carousel'
 
   ngOnInit(): void {}
   //displayCarousel
@@ -26,9 +27,6 @@ export class EditCarouselComponent implements OnInit {
       console.log(this.carouselData);
     });
   }
-
-  //EditCarousel
-  updateCarousel() {}
   //DeleteCarousel
   deleteCarousel($event: Event, id: any) {
     $event.preventDefault();
@@ -43,5 +41,5 @@ export class EditCarouselComponent implements OnInit {
       }
     });
   }
-  editCarousel($event: Event, id: any) {}
+
 }

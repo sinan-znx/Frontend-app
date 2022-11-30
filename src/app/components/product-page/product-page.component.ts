@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { UserApiService } from '../../services/user-api.service';
 
 @Component({
@@ -10,7 +11,8 @@ import { UserApiService } from '../../services/user-api.service';
 export class ProductPageComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
-    private userApi: UserApiService
+    private userApi: UserApiService,
+    public auth: AuthService
   ) {
     this.activatedRoute.paramMap.subscribe((res) => {
       this.id = res.get('id');
@@ -51,5 +53,6 @@ export class ProductPageComponent implements OnInit {
       .removeFromCart(details)
       .subscribe((res) => (this.isAdded = true));
   }
+
   ngOnInit(): void {}
 }

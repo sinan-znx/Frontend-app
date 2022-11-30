@@ -11,7 +11,6 @@ import { EditCarouselComponent } from './components/managePages/edit-carousel/ed
 import { EditCategoryComponent } from './components/managePages/edit-category/edit-category.component';
 import { EditProductComponent } from './components/managePages/edit-product/edit-product.component';
 import { NewCarouselComponent } from './components/managePages/new-carousel/new-carousel.component';
-import { NewCategoryComponent } from './components/managePages/new-category/new-category.component';
 import { NewProductComponent } from './components/managePages/new-product/new-product.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -38,7 +37,6 @@ const routes: Routes = [
       { path: 'editProduct', component: EditProductComponent },
       { path: 'newCarousel', component: NewCarouselComponent },
       { path: 'editCarousel', component: EditCarouselComponent },
-      { path: 'newCategory', component: NewCategoryComponent },
       { path: 'editCategory', component: EditCategoryComponent },
     ],
   },
