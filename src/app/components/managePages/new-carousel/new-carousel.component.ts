@@ -44,6 +44,8 @@ export class NewCarouselComponent implements OnInit {
           category: this.category,
           image: this.url.split('?')[0],
         };
+console.log(carousel);
+
         this.adminApi.addCarousel(carousel).subscribe((res) => {
           if (res.success) {
             this.isNew = true;

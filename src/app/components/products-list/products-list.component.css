@@ -1,4 +1,8 @@
-.productLink{
-text-decoration: none;
-color: black;
+.carouselImg {
+  max-height: 50vh;
+  min-height: 50vh;
+}
+.productLink {
+  color: black;
+  text-decoration: none;
 }
